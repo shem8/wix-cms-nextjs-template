@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  backend-next:
+    build: .
+    container_name: anythink-backend-node
+    command: sh -c " yarn dev"
+
+    working_dir: /usr/src
+    volumes:
+      - ./:/usr/src/
+      - /usr/src/node_modules
+    ports:
+      - "3000:3000"
